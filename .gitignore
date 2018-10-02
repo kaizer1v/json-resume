@@ -16,6 +16,7 @@ logs/
 .cache/
 .gramex-compiled/
 __pycache__
+npm-debug.log
 
 # Old vis.py used to produce xhtml output. Ignore these
 *.xhtml
