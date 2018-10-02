@@ -2,6 +2,14 @@
 
 This app helps you generate your resume using [markdown syntax](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
 
+## Installation
+
+```bash
+npm install showdown -g
+```
+
+this app depends on [showdown](https://github.com/showdownjs/)
+
 ## Steps
 
 - make changes in `sample.md` file
