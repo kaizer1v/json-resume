@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Showdown</title>
+</head>
+
+<body>
+  <h1>Using showdown using javascript</h1>
+
+  <div class='markdown'>
+    
+    # heading 1
+
+    ## heading 2
+
+    - item 1
+    - item 2
+    - item 3
+
+  </div>
+
+
+<script type="text/javascript" src="node_modules/showdown/dist/showdown.js"></script>
+<script type="text/javascript">
+  
+  var converter = new showdown.Converter(),
+      md = document.querySelector('.markdown').innerHTML
+      html = converter.makeHtml(md)
+
+  console.log(html);
+
+</script>
+</body>
+</html>

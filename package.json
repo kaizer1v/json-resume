@@ -1,0 +1,31 @@
+{
+  "name": "md-resume",
+  "version": "1.0.0",
+  "description": "generate resume using markdown synatx",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "resume": "showdown makehtml -i sample.md -o sample.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaizer1v/md-resume.git"
+  },
+  "keywords": [
+    "markdown",
+    "parser",
+    "resume"
+  ],
+  "author": "Vivek Shrinivasan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kaizer1v/md-resume/issues"
+  },
+  "homepage": "https://github.com/kaizer1v/md-resume#readme",
+  "devDependencies": {
+    "showdown": "^1.8.6"
+  },
+  "dependencies": {
+    "marked": "^0.5.1"
+  }
+}
