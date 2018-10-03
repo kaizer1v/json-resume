@@ -8,12 +8,43 @@
 <body>
   
   <header>
-    <h1>{{ name }}</h1>
+    <h1 class="title"></h1>
+    <script type="text/html" class="title"><%= name %></script>
   </header>
 
-<script type="text/javascript" src="bundle.js"></script>
+  <section>
+    <h2>Experience</h2>
+    <div class="experience"></div>
+    <script type="text/html" class="experience">
+      <% for(var i = 0; i < exp.length; i++) { %>
+      <article>
+        <h3><%= exp[i]['org_name'] %></h3>
+        <h4><%= exp[i]['position'] %></h4>
+        <p><%= exp[i]['desc'] %></p>
+      </article>
+      <% } %>
+    </script>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <div class="education"></div>
+    <script type="text/html" class="education">
+      <% for(var i = 0; i < edu.length; i++) { %>
+      <article>
+        <h3><%= edu[i]['university'] %>, <%= edu[i]['location'] %></h3>
+        <h4><%= edu[i]['degree'] %>. <%= edu[i]['course'] %></h4>
+      </article>
+      <% } %>
+    </script>
+  </section>
+
+<script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="node_modules/lodash/lodash.min.js"></script>
+<!-- <script type="text/javascript" src="bundle.js"></script> -->
 <script type="text/javascript">
   
+  // read the json object
   var resume = {
     "config": {
       "theme": "theme-1"
@@ -75,8 +106,16 @@
     ]
   }
 
-  var keys = Object.keys(resume)
+  render('.title', { name: resume['name']})
+  render('.experience', { exp: resume['experience'] })
+  render('.education', { edu: resume['education'] })
 
+  /* helper function to render a template */
+  function render(elem, data) {
+    var script = $("script" + elem)
+    var c = _.template(script.text())
+    $(elem + ':not(script)').html(c(data))
+  }
 
 </script>
 </body>
