@@ -56,6 +56,4 @@
     "skills": ["python", "javascript", "d3", "ux designing", "ux prototyping"]
   };
 
-  console.log(resume);
-
 }());
