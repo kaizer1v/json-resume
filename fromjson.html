@@ -4,21 +4,15 @@
   <title>Resume from JSON</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <style type="text/css">
-    
-    .output { font-family: monospace, sans-serif; }
-
-    h1.title { text-align: center; }
-
-  </style>
+  <link rel="stylesheet" type="text/css" href="css/theme1.css">
 </head>
 <body>
 
   <header>
     <select id="themes">
-      <option value='theme_1'>Theme 1</option>
-      <option value='theme_2'>Theme 2</option>
-      <option value='theme_3'>Theme 3</option>
+      <option value='theme1'>Theme 1</option>
+      <option value='theme2'>Theme 2</option>
+      <option value='theme3'>Theme 3</option>
     </select>
     <button id="download">Download as PDF</button>
   </header>
@@ -138,7 +132,10 @@
   }
 
   $('select').on('change', function() {
-    console.log($(this).val());
+    var file = $(this).val();
+    $('link[rel=stylesheet]').attr('href', function() {
+      return `css/${file}.css`
+    })
   })
 
 </script>
