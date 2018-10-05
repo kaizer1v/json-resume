@@ -10,3 +10,19 @@
 .output h2 > em,
 .output h3 > em,
 .output h4 > em { float: right; font-size: 0.80em; }
+
+
+.education {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+  .education article { padding: 10px; }
+  
+
+.one-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

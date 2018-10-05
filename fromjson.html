@@ -32,9 +32,18 @@
         <script type="text/html">
           <% for(var i = 0; i < exp.length; i++) { %>
           <article>
-            <h3><%= exp[i]['org_name'] %></h3>
+            <div class="one-line">
+              <h3><%= exp[i]['org_name'] %></h3>
+              <em><%= exp[i]['start_date'] %> - <%= exp[i]['end_date'] %></em>
+            </div>
             <h4><%= exp[i]['position'] %></h4>
-            <p><%= exp[i]['desc'] %></p>
+            <p>
+              <% if(exp[i]['desc'].constructor === Array && exp[i]['desc'].length > 1) { %>
+                <ul><li><%= exp[i]['desc'].join('</li><li>') %></li></ul>
+              <% } else { %>
+                <%= exp[i]['desc'] %>
+              <% } %>
+            </p>
           </article>
           <% } %>
         </script>
@@ -47,7 +56,10 @@
         <script type="text/html">
           <% for(var i = 0; i < edu.length; i++) { %>
           <article>
-            <h3><%= edu[i]['university'] %>, <%= edu[i]['location'] %></h3>
+            <div>
+              <h3><%= edu[i]['university'] %>, <%= edu[i]['location'] %></h3>
+              <em><%= edu[i]['start_date'] %> - <%= edu[i]['end_date'] %></em>
+            </div>
             <h4><%= edu[i]['degree'] %>. <%= edu[i]['course'] %></h4>
           </article>
           <% } %>
@@ -58,7 +70,13 @@
     <section>
       <h2>Skills</h2>
       <div class="skills">
-        
+        <ul>
+        <script type="text/html">
+          <% for(let i = 0; i < skills.length; i++) { %>
+            <li><%= skills[i] %></li>
+          <% } %>
+        </script>
+        </ul>
       </div>
     </section>
   </div>
