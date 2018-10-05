@@ -4,40 +4,60 @@
   <title>Resume from JSON</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <style type="text/css">
+    
+    .output { font-family: monospace, sans-serif; }
+
+    h1.title { text-align: center; }
+
+  </style>
 </head>
 <body>
-  
+
   <header>
-    <h1 class="title"></h1>
-    <script type="text/html" class="title"><%= name %></script>
+    <select id="themes">
+      <option value='theme_1'>Theme 1</option>
+      <option value='theme_2'>Theme 2</option>
+      <option value='theme_3'>Theme 3</option>
+    </select>
+    <button id="download">Download as PDF</button>
   </header>
+  
+  <hr />
 
-  <section>
-    <h2>Experience</h2>
-    <div class="experience"></div>
-    <script type="text/html" class="experience">
-      <% for(var i = 0; i < exp.length; i++) { %>
-      <article>
-        <h3><%= exp[i]['org_name'] %></h3>
-        <h4><%= exp[i]['position'] %></h4>
-        <p><%= exp[i]['desc'] %></p>
-      </article>
-      <% } %>
-    </script>
-  </section>
+  <div class="output">
+    <section>
+      <h1 class="title"></h1>
+      <script type="text/html" class="title"><%= name %></script>
+    </section>
 
-  <section>
-    <h2>Education</h2>
-    <div class="education"></div>
-    <script type="text/html" class="education">
-      <% for(var i = 0; i < edu.length; i++) { %>
-      <article>
-        <h3><%= edu[i]['university'] %>, <%= edu[i]['location'] %></h3>
-        <h4><%= edu[i]['degree'] %>. <%= edu[i]['course'] %></h4>
-      </article>
-      <% } %>
-    </script>
-  </section>
+    <section>
+      <h2>Experience</h2>
+      <div class="experience"></div>
+      <script type="text/html" class="experience">
+        <% for(var i = 0; i < exp.length; i++) { %>
+        <article>
+          <h3><%= exp[i]['org_name'] %></h3>
+          <h4><%= exp[i]['position'] %></h4>
+          <p><%= exp[i]['desc'] %></p>
+        </article>
+        <% } %>
+      </script>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div class="education"></div>
+      <script type="text/html" class="education">
+        <% for(var i = 0; i < edu.length; i++) { %>
+        <article>
+          <h3><%= edu[i]['university'] %>, <%= edu[i]['location'] %></h3>
+          <h4><%= edu[i]['degree'] %>. <%= edu[i]['course'] %></h4>
+        </article>
+        <% } %>
+      </script>
+    </section>
+  </div>
 
 <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript" src="node_modules/lodash/lodash.min.js"></script>
@@ -62,7 +82,7 @@
         "position": "ux designer",
         "start_date": "01-01-2014",
         "end_date": "01-07-2016",
-        "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+        "desc": "Lorem <a href='abcd.com'>ipsum</a> dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
       },
       {
         "org_name": "gramener",
@@ -116,6 +136,10 @@
     var c = _.template(script.text())
     $(elem + ':not(script)').html(c(data))
   }
+
+  $('select').on('change', function() {
+    console.log($(this).val());
+  })
 
 </script>
 </body>
