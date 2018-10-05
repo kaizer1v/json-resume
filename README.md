@@ -19,3 +19,7 @@ this app depends on [showdown](https://github.com/showdownjs/)
 ## CSS
 
 css changes are provided inside `css/` folder, uses `theme1.css`
+
+## Ref Link
+
+- for downloading as PDF from html [jsPDF](https://github.com/MrRio/jsPDF)
