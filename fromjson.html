@@ -81,8 +81,11 @@
     </section>
   </div>
 
+  <div id="editor"></div>
+
 <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript" src="node_modules/lodash/lodash.min.js"></script>
+<script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
 <script type="text/javascript">
 
   $.getJSON('./resume.json', load)
@@ -107,6 +110,21 @@
       })
     })
   }
+
+  $('#download').on('click', function() {
+    var doc = new jsPDF()
+    var specialElementHandlers = {
+      '#editor': function(element, renderer) {
+        console.log(renderer);
+        debugger;
+        return true
+      }
+    };
+    doc.fromHTML($('.output').html(), 10, 10, {
+      'elementHandlers': specialElementHandlers
+    })
+    doc.save('resume.pdf')
+  })
 
 
 

@@ -24,6 +24,7 @@
   "homepage": "https://github.com/kaizer1v/md-resume#readme",
   "dependencies": {
     "jquery": "^3.3.1",
-    "lodash": "^4.17.11"
+    "lodash": "^4.17.11",
+    "marked": "^0.5.1"
   }
 }
