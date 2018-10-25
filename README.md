@@ -23,3 +23,19 @@ css changes are provided inside `css/` folder, uses `theme1.css`
 ## Ref Link
 
 - for downloading as PDF from html [jsPDF](https://github.com/MrRio/jsPDF)
+
+
+## Resume Format
+
+This app is designed to help you fill the elements in a pre-templated foramt. Thus, you need to fill in the values for the following which already exist in the template.
+
+### Intro
+
+- Name
+- Date of Birth
+- Email
+- Github link
+
+- Experience
+- Education
+- Skills

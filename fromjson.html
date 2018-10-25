@@ -88,9 +88,24 @@
 <script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
 <script type="text/javascript">
 
-  $.getJSON('./resume.json', load)
+  function load(file, cb, rtype='json') {
+    // type can only be `json`, `text` or `blob` for now
+    let types = ['json', 'text', 'blob']
+    let seltype = (types.indexOf(rtype) === -1) ? 'json' : rtype
+    fetch(file).then(function(resp) {
+      if(resp.ok) {
+        resp[seltype]().then(function(data) {
+          cb(data)
+        })
+      } else {
+        console.log(`${resp.status} -> ${resp.statusText}`)
+      }
+    })
+  }
 
-  function load(resume) {
+  load('resume.json', display)
+
+  function display(resume) {
     render('.title', { name: resume['name']})
     render('.experience', { exp: resume['experience'] })
     render('.education', { edu: resume['education'] })
