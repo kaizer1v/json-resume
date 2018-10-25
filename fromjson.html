@@ -89,14 +89,14 @@
 <script type="text/javascript" src="resume.js"></script>
 <script type="text/javascript">
   
-  // create a resume object
-  var vivek = Resume('resume.json');
+// create a resume object
+Resume.load('resume.json', function(resume) {
+     
+  var vivek = Resume
+    .jqRender('.title', { name: resume['name'] })
+    .jqRender('.experience', { exp: resume['experience'] })
 
-  vivek.load(function(resume) {
-    vivek
-      .render('.title', { name: resume['name'] })
-      .render('.experience', { exp: resume['experience'] })
-  })
+})
 
 </script>
 </body>

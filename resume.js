@@ -1,4 +1,4 @@
-;(function(global) {
+;(function(global, document) {
 
   function Resume(file) {
     return new Resume.init(file)
@@ -6,15 +6,16 @@
 
   Resume.init = function(file) {
     this.file = file
+    return this
   }
 
   Resume.prototype = {
-    version: '1.0.0',
+    version: '1.1.0',
     constructor: Resume,
 
-    load: function(cb, rtype='json') {
+    load: function(file, cb, rtype='json') {
       // type can only be `json`, `text` or `blob` for now
-      let file = this.file
+      this.file = file
       let types = ['json', 'text', 'blob']
       let seltype = (types.indexOf(rtype) === -1) ? 'json' : rtype
       fetch(file).then(function(resp) {
@@ -23,21 +24,30 @@
             cb(data)
           })
         } else {
-          console.log(`${resp.status} -> ${resp.statusText}`)
+          throw `${resp.status} -> ${resp.statusText}`
         }
       })
     },
 
     theme: function(theme) {
       /* provided a them, apply css to resume */
-      console.log('theme', theme)
+      console.log('applying theme', theme)
       return this
     },
 
-    render: function(elem, data) {
-      var script = $(elem).find('script')
+    /* TODO: remove dependency on `$` */
+    render: function(selector, data) {
+      var elem = document.querySelector(selector)
+      var script = document.querySelector('script' + selector)
+      var c = _.template(script.text)
+      elem.innerHTML = c(data)
+      return this
+    },
+
+    jqRender: function(selector, data) {
+      var script = $(selector).find('script')
       var c = _.template(script.text())
-      $(elem).html(c(data))
+      $(selector).html(c(data))
       return this
     },
 
@@ -49,5 +59,5 @@
 
   Resume.init.prototype = Resume.prototype
 
-  global.Resume = global.R = Resume
-}(window));
+  global.Resume = Resume.init.prototype
+}(window, document));
