@@ -88,30 +88,79 @@
 <script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
 <script type="text/javascript">
 
-  function load(file, cb, rtype='json') {
-    // type can only be `json`, `text` or `blob` for now
-    let types = ['json', 'text', 'blob']
-    let seltype = (types.indexOf(rtype) === -1) ? 'json' : rtype
-    fetch(file).then(function(resp) {
-      if(resp.ok) {
-        resp[seltype]().then(function(data) {
-          cb(data)
-        })
-      } else {
-        console.log(`${resp.status} -> ${resp.statusText}`)
-      }
-    })
+;(function(global) {
+
+  function Resume(file) {
+    return new Resume.init(file)
   }
 
-  load('resume.json', display)
+  function 
 
-  function display(resume) {
+  Resume.init = function(file) {
+    var self = this;
+    self.file = file;
+    
+    // load json and set values
+    load(file, function(resume) {
+      self.resume = resume;
+      self.sections = Object.keys(resume);
+    });
+  }
+
+  Resume.prototype = {
+    version: '1.0.0',
+    constructor: Resume,
+
+    load: function(file, cb, rtype='json') {
+      // type can only be `json`, `text` or `blob` for now
+      let types = ['json', 'text', 'blob']
+      let seltype = (types.indexOf(rtype) === -1) ? 'json' : rtype
+      fetch(file).then(function(resp) {
+        if(resp.ok) {
+          resp[seltype]().then(function(data) {
+            cb(data)
+          })
+        } else {
+          console.log(`${resp.status} -> ${resp.statusText}`)
+        }
+      })
+    },
+
+    theme: function(theme) {
+      /* provided a them, apply css to resume */
+      console.log('theme', theme)
+      return this
+    },
+
+    render: function(elem, data) {
+      var script = $(elem).find('script')
+      var c = _.template(script.text())
+      $(elem).html(c(data))
+      return this
+    },
+
+    topdf: function(path) {
+      console.log('saving resume to pdf ...');
+      return this
+    }
+  }
+
+  Resume.init.prototype = Resume.prototype
+
+  global.Resume = global.R = Resume
+}(window));
+
+  var vivek = Resume('resume.json')
+  console.log(vivek);
+  // vivek.render('.title', vivek.resume)
+
+  /*function display(resume) {
     render('.title', { name: resume['name']})
     render('.experience', { exp: resume['experience'] })
     render('.education', { edu: resume['education'] })
     render('.skills', { skills: resume['skills'] })
 
-    /* helper function to render a template */
+    // helper function to render a template
     function render(elem, data) {
       var script = $(elem).find('script')
       var c = _.template(script.text())
@@ -125,8 +174,9 @@
       })
     })
   }
+  */
 
-  $('#download').on('click', function() {
+  /*$('#download').on('click', function() {
     var doc = new jsPDF()
     var specialElementHandlers = {
       '#editor': function(element, renderer) {
@@ -139,9 +189,11 @@
       'elementHandlers': specialElementHandlers
     })
     doc.save('resume.pdf')
-  })
+  })*/
 
+  
 
+/* resume.load('file.json').theme('theme1.css').display() */
 
 </script>
 </body>
