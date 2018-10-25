@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>JSON Resume</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+<body>
+
+
+<script type="text/javascript">
+  
+  function load(file, cb, rtype='json') {
+    // type can only be `json`, `text` or `blob` for now
+    let types = ['json', 'text', 'blob']
+    let seltype = (types.indexOf(rtype) === -1) ? 'json' : rtype
+    fetch(file).then(function(resp) {
+      if(resp.ok) {
+        resp[seltype]().then(function(data) {
+          cb(data)
+        })
+      } else {
+        console.log(`${resp.status} -> ${resp.statusText}`)
+      }
+    })
+  }
+
+  load('resume.json', loadresume)
+
+  function loadresume(resume) {
+    
+  }
+
+</script>
+</body>
+</html>
