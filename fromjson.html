@@ -22,7 +22,7 @@
   <div class="output">
     <section>
       <h1 class="title">
-        <script type="text/html" class="title"><%= name %></script>
+        <script type="text/html" class="title"><%= name.toUpperCase() %></script>
       </h1>
     </section>
 
@@ -36,7 +36,7 @@
               <h3><%= exp[i]['org_name'] %></h3>
               <em><%= exp[i]['start_date'] %> - <%= exp[i]['end_date'] %></em>
             </div>
-            <h4><%= exp[i]['position'] %></h4>
+            <h4><%= Resume.util.titleCase(exp[i]['position']) %></h4>
             <p>
               <% if(exp[i]['desc'].constructor === Array && exp[i]['desc'].length > 1) { %>
                 <ul><li><%= exp[i]['desc'].join('</li><li>') %></li></ul>

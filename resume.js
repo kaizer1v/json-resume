@@ -54,6 +54,12 @@
     topdf: function(path) {
       console.log('saving resume to pdf ...');
       return this
+    },
+
+    util: {
+      titleCase: function(str) {
+        return str.replace(/\b(\w)/g, function(s) { return s.toUpperCase(); })
+      }
     }
   }
 
