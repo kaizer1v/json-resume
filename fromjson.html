@@ -91,11 +91,12 @@
   
 // create a resume object
 Resume.load('resume.json', function(resume) {
-     
+  
   var vivek = Resume
     .jqRender('.title', { name: resume['name'] })
     .jqRender('.experience', { exp: resume['experience'] })
-    .theme('css/theme3.css')
+    .jqRender('.education', { edu: resume['education'] })
+    .theme('css/theme1.css')
 })
 
 </script>
