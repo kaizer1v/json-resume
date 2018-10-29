@@ -22,7 +22,7 @@
   <div class="output">
     <section>
       <h1 class="title">
-        <script type="text/html" class="title"><%= name.toUpperCase() %></script>
+        <script type="text/html" class="title"><%= name %></script>
       </h1>
     </section>
 
@@ -33,7 +33,7 @@
           <% for(var i = 0; i < exp.length; i++) { %>
           <article>
             <div class="one-line">
-              <h3><%= exp[i]['org_name'] %></h3>
+              <h3><%= Resume.util.titleCase(exp[i]['org_name']) %></h3>
               <em><%= exp[i]['start_date'] %> - <%= exp[i]['end_date'] %></em>
             </div>
             <h4><%= Resume.util.titleCase(exp[i]['position']) %></h4>
@@ -72,9 +72,7 @@
       <div class="skills">
         <ul>
         <script type="text/html">
-          <% for(let i = 0; i < skills.length; i++) { %>
-            <li><%= skills[i] %></li>
-          <% } %>
+          <p><%= skills.join(', ') %></p>
         </script>
         </ul>
       </div>
@@ -91,11 +89,12 @@
   
 // create a resume object
 Resume.load('resume.json', function(resume) {
-  
+
   var vivek = Resume
     .jqRender('.title', { name: resume['name'] })
     .jqRender('.experience', { exp: resume['experience'] })
     .jqRender('.education', { edu: resume['education'] })
+    .jqRender('.skills', { skills: resume['skills'] })
     .theme('css/theme1.css')
 })
 

@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text');
+
 .output {
-  font-family: Arial, sans-serif;
+  font-family: 'Crimson Text', serif;
   color: red;
   text-transform: uppercase;
 }

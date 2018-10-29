@@ -3,11 +3,27 @@
   font-size: 14px;
   width: 80%;
   margin: 0 auto;
+  color: #333;
   word-wrap: break-word;
 }
+
 .output h1 {
   text-align: center;
+  text-transform: uppercase;
 }
+
+.output section > h2 {
+  border-bottom: 1px solid #333;
+  display: block;
+  text-align: left;
+  text-transform: uppercase;
+  margin-top: 40px;
+}
+
+.output section h4 {
+  color: #555;
+}
+
 .output h2 > em,
 .output h3 > em,
 .output h4 > em { float: right; font-size: 0.80em; }
