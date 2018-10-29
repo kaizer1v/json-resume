@@ -16,6 +16,15 @@
     version: '1.1.0',
     constructor: Resume,
 
+    json: function(file, cb) {
+      this.file = file
+      fetch(file).then(resp => resp.json()).then(function(data) {
+        cb(data)
+      }).catch(function(err) {
+        throw `${err.status} -> ${err.statusText}`
+      })
+    },
+
     load: function(file, cb, rtype='json') {
       // type can only be `json`, `text` or `blob` for now
       this.file = file
