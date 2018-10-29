@@ -72,6 +72,10 @@
     util: {
       titleCase: function(str) {
         return str.replace(/\b(\w)/g, function(s) { return s.toUpperCase(); })
+      },
+
+      dateFormat: function(format) {
+        // returns a formatted date
       }
     }
   }
