@@ -4,7 +4,7 @@
   <title>Resume from JSON</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" type="text/css" href="css/theme1.css">
+  <!-- <link rel="stylesheet" type="text/css" href="css/theme1.css"> -->
 </head>
 <body>
 
@@ -95,7 +95,7 @@ Resume.load('resume.json', function(resume) {
   var vivek = Resume
     .jqRender('.title', { name: resume['name'] })
     .jqRender('.experience', { exp: resume['experience'] })
-
+    .theme('css/theme3.css')
 })
 
 </script>

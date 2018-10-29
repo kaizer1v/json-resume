@@ -31,7 +31,23 @@
 
     theme: function(theme) {
       /* provided a them, apply css to resume */
-      console.log('applying theme', theme)
+      var link = document.getElementsByTagName('link').item(0)
+
+      if(link) {
+        // update link
+        link.setAttribute('href', theme)
+        console.log('updated');
+      } else {
+        // create and update link
+        var newlink = document.createElement('link')
+        newlink.setAttribute('rel', 'stylesheet')
+        newlink.setAttribute('type', 'text/css')
+        newlink.setAttribute('href', theme)
+        console.log('created');
+
+        document.getElementsByTagName('head').item(0).appendChild(newlink)
+      }
+
       return this
     },
 
