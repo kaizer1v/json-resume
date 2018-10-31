@@ -19,7 +19,7 @@
     json: function(file) {
       this.file = file
       if(global.fetch) {
-        return this.load(file)
+        return this.load(file, 'json')
       } else {
         // alternative with XMLHttpRequest ??
         console.log('alternative using XMLHttpRequest')
