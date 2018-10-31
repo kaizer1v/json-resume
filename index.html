@@ -20,8 +20,8 @@
 
 Resume.json('resume/resume.json').then(function(resume) {
   Resume
-    .theme('css/headshot.css')
-    .template('layouts/headshot.html', { resume: resume }, '.output')
+    .theme('themes/headshot/headshot.css')
+    .template('themes/headshot/headshot.html', { resume: resume }, '.output')
 })
 
 </script>
