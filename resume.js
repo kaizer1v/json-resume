@@ -38,7 +38,6 @@
 
     theme: function(theme) {
       /* provided a them, apply css to resume */
-
       if(link) {
         link.setAttribute('href', theme)
       } else {
@@ -47,6 +46,7 @@
         newlink.setAttribute('type', 'text/css')
         newlink.setAttribute('href', theme)
         head.appendChild(newlink)
+        link = newlink
       }
 
       return this
