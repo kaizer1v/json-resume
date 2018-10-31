@@ -1,5 +1,5 @@
-;(function(global, document) {
-
+;(function(global) {
+  var document = global.document
   var head = document.getElementsByTagName('head').item(0)
   var link = document.getElementsByTagName('link').item(0)
 
@@ -18,11 +18,15 @@
 
     json: function(file, cb) {
       this.file = file
-      fetch(file).then(resp => resp.json()).then(function(data) {
-        cb(data)
-      }).catch(function(err) {
-        throw `${err.status} -> ${err.statusText}`
-      })
+      if(global.fetch) {
+        fetch(file).then(resp => resp.json()).then(function(data) {
+          cb(data)
+        }).catch(function(err) {
+          throw `${err.status} -> ${err.statusText}`
+        })
+      } else {
+        // alternative with XMLHttpRequest ??
+      }
     },
 
     load: function(file, cb, rtype='json') {
@@ -92,4 +96,4 @@
   Resume.init.prototype = Resume.prototype
 
   global.Resume = Resume.init.prototype
-}(window, document));
+}(this));
