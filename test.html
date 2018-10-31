@@ -75,16 +75,21 @@
 <script type="text/javascript">
   
 // create a resume object
+// Resume.json('resume.json').then(function(resume) {
+
+//   var vivek = Resume
+//     .theme('css/theme2.css')
+//     .jqRender('.title', { name: resume['name'] })
+//     .jqRender('.experience', { exp: resume['experience'] })
+//     .jqRender('.education', { edu: resume['education'] })
+//     .jqRender('.skills', { skills: resume['skills'] })
+// })
+
 Resume.json('resume.json').then(function(resume) {
-
-  var vivek = Resume
+  Resume
     .theme('css/theme1.css')
-    .jqRender('.title', { name: resume['name'] })
-    .jqRender('.experience', { exp: resume['experience'] })
-    .jqRender('.education', { edu: resume['education'] })
-    .jqRender('.skills', { skills: resume['skills'] })
+    .template('layouts/fulltemplate.html', { resume: resume }, '.output')
 })
-
 
 </script>
 </body>

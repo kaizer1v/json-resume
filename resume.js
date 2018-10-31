@@ -36,6 +36,18 @@
         .catch(function(err) { throw `${err.message}` })
     },
 
+    template: function(file, data, oSelector) {
+      var self = this
+      var target = document.querySelector(oSelector)
+      fetch(file)
+        .then(d => d.text())
+        .then(function(t) {
+          var c = _.template(t)
+          target.innerHTML = c(data)
+        })
+      return this
+    },
+
     theme: function(theme) {
       /* provided a them, apply css to resume */
       if(link) {

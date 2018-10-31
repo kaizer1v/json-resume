@@ -1,0 +1,51 @@
+<section>
+  <h1 class="title">
+    <%= resume['name'] %>
+  </h1>
+</section>
+
+<section>
+  <h2>Experience</h2>
+  <div class="experience">
+    <% var exp = resume['experience'] %>
+    <% for(var i = 0; i < exp.length; i++) { %>
+    <article>
+      <div class="one-line">
+        <h3><%= Resume.util.titleCase(exp[i]['org_name']) %></h3>
+        <em><%= exp[i]['start_date'] %> - <%= exp[i]['end_date'] %></em>
+      </div>
+      <h4><%= Resume.util.titleCase(exp[i]['position']) %></h4>
+      <p>
+        <% if(exp[i]['desc'].constructor === Array && exp[i]['desc'].length > 1) { %>
+          <ul><li><%= exp[i]['desc'].join('</li><li>') %></li></ul>
+        <% } else { %>
+          <%= exp[i]['desc'] %>
+        <% } %>
+      </p>
+    </article>
+    <% } %>
+  </div>
+</section>
+
+<section>
+  <h2>Education</h2>
+  <div class="education">
+    <% var edu = resume['education'] %>
+    <% for(var i = 0; i < edu.length; i++) { %>
+    <article>
+      <div>
+        <h3><%= edu[i]['university'] %>, <%= edu[i]['location'] %></h3>
+        <em><%= edu[i]['start_date'] %> - <%= edu[i]['end_date'] %></em>
+      </div>
+      <h4><%= edu[i]['degree'] %>. <%= edu[i]['course'] %></h4>
+    </article>
+    <% } %>
+  </div>
+</section>
+
+<section>
+  <h2>Skills</h2>
+  <div class="skills">
+    <p><%= resume['skills'].join(', ') %></p>
+  </div>
+</section>
