@@ -9,7 +9,7 @@
 <body>
 
   <div class="output">
-    <!-- loaded from external template -->
+    <!-- loaded from external template `layouts/fulltemplate.html` -->
   </div>
 
 <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
@@ -18,7 +18,7 @@
 <script type="text/javascript" src="resume.js"></script>
 <script type="text/javascript">
 
-Resume.json('resume.json').then(function(resume) {
+Resume.json('resume/resume.json').then(function(resume) {
   Resume
     .theme('css/theme1.css')
     .template('layouts/fulltemplate.html', { resume: resume }, '.output')

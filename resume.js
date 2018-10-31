@@ -37,7 +37,6 @@
     },
 
     template: function(file, data, oSelector) {
-      var self = this
       var target = document.querySelector(oSelector)
       fetch(file)
         .then(d => d.text())
