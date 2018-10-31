@@ -1,28 +1,33 @@
 {
-  "config": {
-    "theme": "theme-1"
-  },
   "photo": "me.png",
   "name": "vivek shrinivasan",
   "dob": "30-07-1988",
+  "email": "vivek.shrini [at] gmail",
+  "mobile": "999-999-9999",
+  "linkedin": "https://www.linkedin.com/in/vivek-shrinivasan/",
+  "github": "github.com/kaizer1v",
+  "twitter": "twitter.com/kaizer1v",
+  "website": "kaizer1v.github.io",
+  "blog": "kaizer1v.github.io",
+  "intro": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   "experience": [
     {
-      "org_name": "gramener",
-      "position": "associate data scientist & tech lead",
+      "org_name": "Gramener",
+      "position": "Associate Data Scientist & Tech Lead",
       "start_date": "15-07-2016",
       "end_date": "19-09-2018",
       "desc": ["Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.", "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."]
     },
     {
-      "org_name": "informatica",
-      "position": "ux designer",
+      "org_name": "Informatica",
+      "position": "UX Designer",
       "start_date": "01-01-2014",
       "end_date": "01-07-2016",
       "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
     },
     {
-      "org_name": "symantec",
-      "position": "ux prototyper",
+      "org_name": "Symantec",
+      "position": "UX Prototyper",
       "start_date": "01-01-2013",
       "end_date": "01-07-2014",
       "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
@@ -30,20 +35,20 @@
   ],
   "education": [
     {
-      "university": "university of st. andrews",
-      "location": "scotland, united kingdom",
+      "university": "University of St. Andrews",
+      "location": "Scotland, United kingdom",
       "start_date": "01-10-2008",
       "end_date": "01-11-2009",
       "degree": "msc",
-      "course": "management and information technology"
+      "course": "Management & Information Technology"
     },
     {
-      "university": "maharaja sayajirao university",
-      "location": "baroda, gujarat",
+      "university": "Maharaja Sayajirao University",
+      "location": "Baroda, Gujarat",
       "start_date": "01-07-2005",
       "end_date": "01-04-2008",
-      "degree": "bca",
-      "course": "computer applications"
+      "degree": "BCA",
+      "course": "Computer Applications"
     }
   ],
   "skills": ["python", "javascript", "d3", "ux designing", "ux prototyping"]
