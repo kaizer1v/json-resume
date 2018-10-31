@@ -5,7 +5,7 @@ Here's what you need to do in order to setup the project on your system
 ## Clone this repo
 
 ```sh
-git clone ...
+git clone git@github.com:kaizer1v/md-resume.git
 ```
 
 ## Create a new theme
