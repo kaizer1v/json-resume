@@ -16,33 +16,24 @@
     version: '1.1.0',
     constructor: Resume,
 
-    json: function(file, cb) {
+    json: function(file) {
       this.file = file
       if(global.fetch) {
-        fetch(file).then(resp => resp.json()).then(function(data) {
-          cb(data)
-        }).catch(function(err) {
-          throw `${err.status} -> ${err.statusText}`
-        })
+        return this.load(file)
       } else {
         // alternative with XMLHttpRequest ??
+        console.log('alternative using XMLHttpRequest')
       }
     },
 
-    load: function(file, cb, rtype='json') {
+    load: function(file, rtype='json') {
       // type can only be `json`, `text` or `blob` for now
       this.file = file
       let types = ['json', 'text', 'blob']
       let seltype = (types.indexOf(rtype) === -1) ? 'json' : rtype
-      fetch(file).then(function(resp) {
-        if(resp.ok) {
-          resp[seltype]().then(function(data) {
-            cb(data)
-          })
-        } else {
-          throw `${resp.status} -> ${resp.statusText}`
-        }
-      })
+      return fetch(file)
+        .then(resp => resp[seltype]())
+        .catch(function(err) { throw `${err.message}` })
     },
 
     theme: function(theme) {

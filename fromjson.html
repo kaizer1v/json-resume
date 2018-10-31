@@ -88,7 +88,7 @@
 <script type="text/javascript">
   
 // create a resume object
-Resume.json('resume.json', function(resume) {
+Resume.json('resume.json').then(function(resume) {
 
   var vivek = Resume
     .jqRender('.title', { name: resume['name'] })
