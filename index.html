@@ -17,11 +17,11 @@
 <!-- <script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script> -->
 <script type="text/javascript" src="resume.js"></script>
 <script type="text/javascript">
-
+  
 Resume.json('resume/resume.json').then(function(resume) {
   Resume
-    .theme('themes/headshot/headshot.css')
     .template('themes/headshot/headshot.html', { resume: resume }, '.output')
+    .theme('themes/headshot/headshot.css')
 })
 
 </script>

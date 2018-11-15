@@ -2,6 +2,14 @@
 
 Here's what you need to do in order to setup the project on your system
 
+# Software Requirements
+
+You will need the following to run the application
+
+- Text editor, that understands `json` format
+- A web-server to run the app on the browser. If you have python installed, then running `python -m http.server 8998` from the folder will run the application on the browser
+- A browser, preferrably Google Chrome
+
 ## Clone this repo
 
 ```sh
