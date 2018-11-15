@@ -21,3 +21,11 @@ Resume.load('resume.json', function(resume) {
 ```javascript
 Resume.jqRender('.title', { name: 'Vivek Shrinivasan' })
 ```
+
+## Installation
+
+clone this repo and run the following command
+
+```bash
+npm install
+```
