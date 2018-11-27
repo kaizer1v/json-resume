@@ -47,9 +47,9 @@
       return this
     },
 
-    theme: function(theme) {
+    theme: function(theme, update=true) {
       /* provided a them, apply css to resume */
-      if(link) {
+      if(link && update) {
         link.setAttribute('href', theme)
       } else {
         var newlink = document.createElement('link')
