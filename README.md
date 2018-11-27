@@ -29,3 +29,7 @@ clone this repo and run the following command
 ```bash
 npm install
 ```
+
+will install the dependencies required for the `md-resume` app.
+
+**NOTE** This installation step is NOT the same as installing dependencies for the themes. In order to do that, kindly read through the [themes README file](themes/README.md)
