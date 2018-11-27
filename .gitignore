@@ -6,29 +6,19 @@
 # Filenames should NOT have spaces
 * *
 
-# Ignore byte-compiled / optimised / DLL files
-*.py[cod]
+# Specific Files
+PLAN.md
 
 # Ignore log files
 logs/
 
 # Cache folders created by Gramex
 .cache/
-.gramex-compiled/
 __pycache__
 npm-debug.log
 
 # Old vis.py used to produce xhtml output. Ignore these
 *.xhtml
-
-# Data files. Try not to commit data into the repo
-*.csv
-*.dat
-*.mdb
-
-# Zip files that aren't read by Pandas
-*.7z
-*.zip
 
 # Documents
 *.doc*
@@ -43,9 +33,6 @@ npm-debug.log
 
 # Sublime-text workspaces, etc
 *.sublime-*
-
-# IPython Notebook checkpoints
-.ipynb_checkpoints
 
 # Typically bash.exe.stackdump on Cygwin
 *.stackdump
@@ -62,6 +49,3 @@ Desktop.ini
 $RECYCLE.BIN/
 *[Tt]humbs.db
 *.DS_Store
-
-# R history files
-.RHistory
