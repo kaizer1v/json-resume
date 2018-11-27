@@ -6,8 +6,8 @@
     </div>
     <div id="contactDetails">
       <ul>
-        <li>e: <a href="mailto:<%= resume['email'] %>" target="_blank"><%= resume['email'] %></a></li>
-        <li>w: <a href="<%= resume['website'] %>"><%= resume['website'] %></a></li>
+        <li><address>e: <a href="mailto:<%= resume['email'] %>" target="_blank"><%= resume['email'] %></a></address></li>
+        <li>w: <a href="<%= resume['website'] %>" target="_blank"><%= resume['website'] %></a></li>
         <li>m: <%= resume['mobile'] %></li>
       </ul>
     </div>
@@ -23,8 +23,9 @@
       <% var exp = resume['experience'] %>
       <% for(var i = 0; i < exp.length; i++) { %>
         <article>
-          <h2><%= exp[i]['position'] %></h2>
+          <h2 class="subTitle"><%= exp[i]['org_name'] %> - <%= exp[i]['position'] %></h2>
           <p class="subDetails"><%= exp[i]['start_date'] %> - <%= exp[i]['end_date'] %></p>
+          <div class="clear"></div>
           <p>
           <% if(exp[i]['desc'].constructor === Array && exp[i]['desc'].length > 1) { %>
             <ul><li><%= exp[i]['desc'].join('</li><li>') %></li></ul>
@@ -59,8 +60,9 @@
       <% var edu = resume['education'] %>
       <% for(var i = 0; i < edu.length; i++) { %>
         <article>
-          <h2><%= edu[i]['university'] %>, <%= edu[i]['location'] %></h2>
+          <h2 class="subTitle"><%= edu[i]['university'] %>, <%= edu[i]['location'] %></h2>
           <p class="subDetails"><%= edu[i]['start_date'] %> - <%= edu[i]['end_date'] %></p>
+          <div class="clear"></div>
           <p><%= edu[i]['degree'] %>. <%= edu[i]['course'] %></p>
         </article>
       <% } %>
