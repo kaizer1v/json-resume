@@ -18,10 +18,11 @@
 <script type="text/javascript" src="resume.js"></script>
 <script type="text/javascript">
   
-Resume.json('resume/resume.json').then(function(resume) {
+Resume.json('resume/resume-ux-designer.json').then(function(resume) {
   Resume
-    .template('themes/headshot/headshot.html', { resume: resume }, '.output')
-    .theme('themes/headshot/headshot.css')
+    .template('themes/newave/newave.html', { resume: resume }, '.output')
+    .theme('themes/node_modules/bootstrap/dist/css/bootstrap.min.css')
+    .theme('themes/newave/newave.css', false)
 })
 
 </script>
