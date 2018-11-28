@@ -53,6 +53,17 @@
       <div class="clear"></div>
     </section>
     <section>
+      <div class="sectionContent">
+        <article>        
+          <% var certs = resume['certifications'] %>
+          <% for(var i = 0; i < certs.length; i++) { %>
+            <h3 class="subTitle"><%= certs[i]['title'] %> (<a href="<%= certs[i]['link'] %>">link</a>)</h3>
+          <% } %>
+        </article>
+      </div>
+      <div class="clear"></div>
+    </section>
+    <section>
       <div class="sectionTitle">
         <h1>Education</h1>
       </div>

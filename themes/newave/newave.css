@@ -230,6 +230,10 @@ section:last-child {
   margin-bottom: -2px;
 }
 
+.sectionContent h3.subTitle {
+  font-size: 1em;
+}
+
 .sectionContent .subDetails {
   float: right;
   text-align: right;
