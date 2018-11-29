@@ -104,6 +104,8 @@ body {
   clear: both;
 }
 
+b { font-weight: bolder; }
+
 p {
   font-size: 1em;
   line-height: 1.4em;

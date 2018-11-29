@@ -22,6 +22,8 @@ Resume.json('resume/resume-ui-developer.json').then(function(resume) {
   Resume
     .template('themes/newave/newave.html', { resume: resume }, '.output')
     .theme('themes/node_modules/bootstrap/dist/css/bootstrap.min.css')
+    // .theme('themes/node_modules/font-awesome/css/font-awesome.min.css')
+    .theme('https://use.fontawesome.com/releases/v5.5.0/css/all.css')
     .theme('themes/newave/newave.css', false)
 })
 

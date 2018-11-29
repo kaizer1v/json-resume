@@ -6,9 +6,9 @@
     </div>
     <div id="contactDetails">
       <ul>
-        <li><address>e: <a href="mailto:<%= resume['email'] %>" target="_blank"><%= resume['email'] %></a></address></li>
-        <li>w: <a href="<%= resume['website'] %>" target="_blank"><%= resume['website'] %></a></li>
-        <li>m: <%= resume['mobile'] %></li>
+        <li><address><i class="fas fa-envelope"></i> <a href="mailto:<%= resume['email'] %>" target="_blank"><%= resume['email'] %></a></address></li>
+        <li><i class="fab fa-github"></i> <%= resume['github'] %></li>
+        <li><i class="fas fa-phone-square"></i> <%= resume['mobile'] %></li>
       </ul>
     </div>
     <div class="clear"></div>
