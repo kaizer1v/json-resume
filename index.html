@@ -14,18 +14,19 @@
 
 <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript" src="node_modules/lodash/lodash.min.js"></script>
-<!-- <script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script> -->
 <script type="text/javascript" src="resume.js"></script>
 <script type="text/javascript">
-  
-Resume.json('resume/resume-ui-developer.json').then(function(resume) {
-  Resume
-    .template('themes/newave/newave.html', { resume: resume }, '.output')
-    .theme('themes/node_modules/bootstrap/dist/css/bootstrap.min.css')
-    // .theme('themes/node_modules/font-awesome/css/font-awesome.min.css')
-    .theme('https://use.fontawesome.com/releases/v5.5.0/css/all.css')
-    .theme('themes/newave/newave.css', false)
-})
+
+(function(json, theme_name){
+  Resume.json('resume/' + json).then(function(resume) {
+    Resume
+      .template('themes/'+ theme_name +'/'+ theme_name +'.html', { resume: resume }, '.output')
+      .theme('themes/node_modules/bootstrap/dist/css/bootstrap.min.css')
+      // .theme('themes/node_modules/font-awesome/css/font-awesome.min.css')
+      .theme('https://use.fontawesome.com/releases/v5.5.0/css/all.css')
+      .theme('themes/'+ theme_name +'/'+ theme_name +'.css', false)
+  })
+})('resume-SAP.json', 'for_sap');
 
 </script>
 </body>
