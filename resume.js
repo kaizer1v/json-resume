@@ -1,4 +1,4 @@
-;(function(global, _) {
+;(function(global, _, $) {
   var document = global.document
   var head = document.getElementsByTagName('head').item(0)
   var link = document.getElementsByTagName('link').item(0)
@@ -98,4 +98,4 @@
   Resume.init.prototype = Resume.prototype
 
   global.Resume = Resume.init.prototype
-}(this, _));
+}(this, _, $));
