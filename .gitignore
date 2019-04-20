@@ -23,9 +23,12 @@ npm-debug.log
 
 # Documents
 *.doc*
-*.pdf
 *.ppt*
 *.xls*
+
+# ignore all pdf files but
+*.pdf
+!Vivek_Shrinivasan_Resume.pdf
 
 # Backup files
 ~$*
