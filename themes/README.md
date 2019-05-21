@@ -56,7 +56,6 @@ Open the `index.html` file from your root directory and write below the end of t
     Resume
       .template('themes/'+ theme_name +'/'+ theme_name +'.html', { resume: resume }, '.output')
       .theme('themes/node_modules/bootstrap/dist/css/bootstrap.min.css')
-      // .theme('themes/node_modules/font-awesome/css/font-awesome.min.css')
       .theme('https://use.fontawesome.com/releases/v5.5.0/css/all.css')
       .theme('themes/'+ theme_name +'/'+ theme_name +'.css', false)
   })
