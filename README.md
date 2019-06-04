@@ -28,6 +28,7 @@ clone this repo and run the following command
 
 ```bash
 npm install
+npm start
 ```
 
 will install the dependencies required for the `md-resume` app.
