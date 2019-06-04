@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "resume": "showdown makehtml -i sample.md -o sample.html"
+    "resume": "showdown makehtml -i sample.md -o sample.html",
+    "start": "grunt serve"
   },
   "repository": {
     "type": "git",
@@ -28,5 +29,11 @@
     "lodash": "^4.17.11",
     "marked": "^0.5.1",
     "popper.js": "^1.14.5"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.4",
+    "grunt-cli": "^1.3.2",
+    "grunt-contrib-connect": "^2.0.0",
+    "grunt-contrib-watch": "^1.1.0"
   }
 }
