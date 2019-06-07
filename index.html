@@ -5,10 +5,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- <link rel="stylesheet" type="text/css" href="css/theme1.css"> -->
+
+  <style type="text/css">
+    header { background: #fff; color: #000; }
+  </style>
 </head>
 <body>
 
-  <header><button id="print-pdf">Print as PDF</button><hr /></header>
+  <header>
+    <button id="print-pdf">Print as PDF</button>
+    <label>Choose Theme</label>
+    <select id="select-theme">
+      <option>First</option>
+      <option>Headshot</option>
+      <option>Newave</option>
+    </select>
+    <hr />
+  </header>
 
   <div class="output">
     <!-- loaded from external template `layouts/fulltemplate.html` -->
@@ -22,7 +35,7 @@
 <script type="text/javascript" src="resume.js"></script>
 <script type="text/javascript">
 
-(function(json, theme_name) {
+function render(json, theme_name) {
   Resume.json('resume/' + json).then(function(resume) {
     Resume
       .template('themes/'+ theme_name +'/'+ theme_name +'.html', { resume: resume }, '.output')
@@ -31,25 +44,19 @@
       .theme('https://use.fontawesome.com/releases/v5.5.0/css/all.css')
       .theme('themes/'+ theme_name +'/'+ theme_name +'.css', false)
   })
-})('resume.json', 'first');
+}
+render('resume.json', 'first');
 
 
 // save resume as pdf button
-var btn = document.getElementById('print-pdf')
-btn.onclick = save_as_pdf;
+document.getElementById('print-pdf').onclick = Resume.topdf;
 
-// save resume as pdf
-function save_as_pdf() {
-  var element = document.getElementsByClassName('output')[0];
-  var opt = {
-    margin:       0,
-    filename:     'resume.pdf',
-    jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
-  };
-
-  // New Promise-based usage:
-  html2pdf().set(opt).from(element).save();
+var theme_dd = document.getElementById('select-theme')
+theme_dd.onchange = function() {
+  var sel_theme = this.value.toLowerCase();
+  render('resume.json', sel_theme);
 }
+
 
 </script>
 </body>

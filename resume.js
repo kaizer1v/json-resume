@@ -79,8 +79,16 @@
       return this
     },
 
-    topdf: function(path) {
-      console.log('saving resume to pdf ...');
+    topdf: function() {
+      // console.log('saving resume to pdf ...');
+      var element = document.getElementsByClassName('output')[0];
+      var opt = {
+        margin:       0,
+        filename:     'resume.pdf',
+        jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(element).save();   // promise based
+
       return this
     },
 
