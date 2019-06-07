@@ -25,6 +25,7 @@
   "homepage": "https://github.com/kaizer1v/md-resume#readme",
   "dependencies": {
     "bootstrap": "^4.1.3",
+    "html2pdf.js": "^0.9.1",
     "jquery": "^3.3.1",
     "lodash": "^4.17.11",
     "marked": "^0.5.1",

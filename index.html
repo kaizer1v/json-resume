@@ -8,12 +8,17 @@
 </head>
 <body>
 
+  <header><button id="print-pdf">Print as PDF</button><hr /></header>
+
   <div class="output">
     <!-- loaded from external template `layouts/fulltemplate.html` -->
   </div>
 
+<script type="text/javascript" src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
 <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript" src="node_modules/lodash/lodash.min.js"></script>
+<script type="text/javascript" src="node_modules/html2pdf.js/dist/html2pdf.js"></script>
+
 <script type="text/javascript" src="resume.js"></script>
 <script type="text/javascript">
 
@@ -26,7 +31,23 @@
       .theme('https://use.fontawesome.com/releases/v5.5.0/css/all.css')
       .theme('themes/'+ theme_name +'/'+ theme_name +'.css', false)
   })
-})('resume.json', 'headshot');
+})('resume.json', 'first');
+
+var btn = document.getElementById('print-pdf')
+btn.onclick = save_as_pdf;
+
+// save resume as pdf
+function save_as_pdf() {
+  var element = document.getElementsByClassName('output')[0];
+  var opt = {
+    margin:       0,
+    filename:     'resume.pdf',
+    jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+  };
+
+  // New Promise-based usage:
+  html2pdf().set(opt).from(element).save();
+}
 
 </script>
 </body>
