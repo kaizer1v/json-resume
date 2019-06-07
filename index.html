@@ -35,7 +35,7 @@
 <script type="text/javascript">
 
 function render(json, theme_name) {
-  Resume.json('resume/' + json).then(function(resume) {
+  Resume.json('resume/' + json).then((resume) => {
     Resume
       .template('themes/'+ theme_name +'/'+ theme_name +'.html', { resume: resume }, '.output')
       .theme('themes/node_modules/bootstrap/dist/css/bootstrap.min.css')
@@ -50,6 +50,7 @@ render('resume.json', 'first');
 // save resume as pdf button
 document.getElementById('print-pdf').onclick = Resume.topdf;
 
+// update theme from dropdown
 var theme_dd = document.getElementById('select-theme')
 theme_dd.onchange = function() {
   var sel_theme = this.value.toLowerCase();
