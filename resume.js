@@ -79,12 +79,12 @@
       return this
     },
 
-    topdf: function() {
+    topdf: function(filename='Resume') {
       // console.log('saving resume to pdf ...');
       var element = document.getElementsByClassName('output')[0];
       var opt = {
         margin:       0,
-        filename:     'resume.pdf',
+        filename:     `${filename}.pdf`,
         jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
       };
       html2pdf().set(opt).from(element).save();   // promise based
