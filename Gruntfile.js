@@ -22,6 +22,16 @@ module.exports = grunt => {
       }
     },
 
+    compress_js: {
+      options: {
+        banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+      },
+      build: {
+        src: '<%= pkg.name %>.js',
+        dest: 'build/<%= pkg.name %>.min.js'
+      }
+    },
+
     watch: {
 
     }
@@ -31,4 +41,5 @@ module.exports = grunt => {
 
   // Serve presentation locally
   grunt.registerTask('serve', ['connect']);
+  grunt.registerTask('compress', ['compress_js'])
 }
