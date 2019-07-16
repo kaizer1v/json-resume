@@ -13,13 +13,14 @@
 <body>
 
   <header>
-    <button id="print-pdf">Print as PDF</button>
+    <button title="Currently doesn\'t allow text selection" id="print-pdf">Print as PDF</button>
     <label>Choose Theme</label>
     <select id="select-theme">
-      <option>First</option>
-      <option>Headshot</option>
-      <option>Newave</option>
+      <option>first</option>
+      <option>headshot</option>
+      <option>newave</option>
     </select>
+    <button title="Shows page margins" id="show-margins">Show Margins</button>
     <hr />
   </header>
 
@@ -31,33 +32,6 @@
 <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript" src="node_modules/lodash/lodash.min.js"></script>
 <script type="text/javascript" src="resume.js"></script>
-
-<script type="text/javascript">
-
-function render(json, theme_name) {
-  Resume.json('resume/' + json).then((resume) => {
-    Resume
-      .template('themes/'+ theme_name +'/'+ theme_name +'.html', { resume: resume }, '.output')
-      .theme('themes/node_modules/bootstrap/dist/css/bootstrap.min.css')
-      // .theme('themes/node_modules/font-awesome/css/font-awesome.min.css')
-      .theme('https://use.fontawesome.com/releases/v5.5.0/css/all.css')
-      .theme('themes/'+ theme_name +'/'+ theme_name +'.css', false)
-  })
-}
-render('resume.json', 'first');
-
-
-// save resume as pdf button
-document.getElementById('print-pdf').onclick = Resume.topdf;
-
-// update theme from dropdown
-var theme_dd = document.getElementById('select-theme')
-theme_dd.onchange = function() {
-  var sel_theme = this.value.toLowerCase();
-  render('resume.json', sel_theme);
-}
-
-
-</script>
+<script type="text/javascript" src="main.js"></script>
 </body>
 </html>

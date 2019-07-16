@@ -1,13 +1,13 @@
-<div id="cv" class="instaFade">
+<div id="cv">
   <div class="mainDetails">
-    <div id="headshot" class="quickFade">
+    <div id="headshot">
       <img src="resume/<%= resume['photo'] %>" alt="<%= resume['name'] %>" />
     </div>
       <div id="name">
-        <h1 contenteditable="true" class="quickFade delayTwo"><%= resume['name'] %></h1>
-        <h2 contenteditable="true" class="quickFade delayThree"><%= resume['title'] %></h2>
+        <h1 contenteditable="true"><%= resume['name'] %></h1>
+        <h2 contenteditable="true"><%= resume['title'] %></h2>
       </div>
-      <div id="contactDetails" class="quickFade delayFour">
+      <div id="contactDetails">
         <ul>
           <li>e: <a href="mailto:<%= resume['email'] %>" target="_blank"><%= resume['email'] %></a></li>
           <li>w: <a href="<%= resume['website'] %>"><%= resume['website'] %></a></li>
@@ -16,7 +16,7 @@
       </div>
       <div class="clear"></div>
     </div>
-    <div id="mainArea" class="quickFade delayFive">
+    <div id="mainArea">
       <section>
         <article>
           <div class="sectionTitle">
