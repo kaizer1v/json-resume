@@ -4,8 +4,8 @@
       <img src="resume/<%= resume['photo'] %>" alt="<%= resume['name'] %>" />
     </div>
       <div id="name">
-        <h1 class="quickFade delayTwo"><%= resume['name'] %></h1>
-        <h2 class="quickFade delayThree"><%= resume['title'] %></h2>
+        <h1 contenteditable="true" class="quickFade delayTwo"><%= resume['name'] %></h1>
+        <h2 contenteditable="true" class="quickFade delayThree"><%= resume['title'] %></h2>
       </div>
       <div id="contactDetails" class="quickFade delayFour">
         <ul>
@@ -23,7 +23,7 @@
             <h1>Personal Profile</h1>
           </div>
           <div class="sectionContent">
-            <p><%= resume['intro'] %></p>
+            <p contenteditable="true"><%= resume['intro'] %></p>
           </div>
         </article>
         <div class="clear"></div>
@@ -37,19 +37,18 @@
         <% var exp = resume['experience'] %>
         <% for(var i = 0; i < exp.length; i++) { %>
           <article>
-            <h2><%= exp[i]['position'] %></h2>
-            <p class="subDetails"><%= exp[i]['start_date'] %> - <%= exp[i]['end_date'] %></p>
+            <h2 contenteditable="true"><%= exp[i]['position'] %></h2>
+            <p contenteditable="true" class="subDetails"><%= exp[i]['start_date'] %> - <%= exp[i]['end_date'] %></p>
             <p>
             <% if(exp[i]['desc'].constructor === Array && exp[i]['desc'].length > 1) { %>
-              <ul><li><%= exp[i]['desc'].join('</li><li>') %></li></ul>
+              <ul contenteditable="true"><li><%= exp[i]['desc'].join('</li><li>') %></li></ul>
             <% } else { %>
-              <%= exp[i]['desc'] %>
+              <p contenteditable="true"><%= exp[i]['desc'] %></p>
             <% } %>
             </p>
           </article>
         <% } %>
         </div>
-
         <div class="clear"></div>
       </section>
       <section>
