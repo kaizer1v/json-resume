@@ -8,7 +8,7 @@
 
 # Specific Files
 PLAN.md
-resume/resume*.json
+resume/resume-original.json
 
 # Ignore log files
 logs/

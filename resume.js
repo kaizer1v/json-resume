@@ -32,7 +32,10 @@
       let types = ['json', 'text', 'blob']
       let seltype = (types.indexOf(rtype) === -1) ? 'json' : rtype
       return fetch(file)
-        .then(resp => resp[seltype]())
+        .then(function(resp) {
+          debugger;
+          return resp[seltype]();
+        })
         .catch(function(err) { throw `${err.message}` })
     },
 
@@ -89,6 +92,15 @@
       html2pdf().set(opt).from(element).save();   // promise based
 
       return this
+    },
+
+    jsonSave: function(json) {
+      localStorage.setItem('resume', JSON.stringify(json))
+      return this
+    },
+
+    jsonGet: function() {
+      return JSON.parse(localStorage.getItem('resume'))
     },
 
     util: {
