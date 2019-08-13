@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Resume from JSON</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- <link rel="stylesheet" type="text/css" href="css/theme1.css"> -->
+
+  <style type="text/css">
+    header { background: #fff; color: #000; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <button title="Currently doesn\'t allow text selection" id="save-json">Save Data</button>
+    <hr />
+  </header>
+
+  <form>
+    <div class="form-group">
+      <label for="resume-form-name">Name</label>
+      <input type="text" class="form-control" id="resume-form-name" aria-describedby="resume-fullname" placeholder="Enter Fullname">
+      <small id="resume-fullname" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="resume-form-designation">Designation</label>
+      <input type="text" class="form-control" id="resume-form-designation" placeholder="Designation">
+    </div>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="resume-form-current-job">
+      <label class="form-check-label" for="resume-form-current-job">Current Job?</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+  </form>
+
+<script type="text/javascript" src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+<script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="node_modules/lodash/lodash.min.js"></script>
+<script type="text/javascript" src="resume.js"></script>
+</body>
+</html>
