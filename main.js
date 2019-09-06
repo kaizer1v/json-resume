@@ -34,5 +34,5 @@ document.getElementById('print-pdf').onclick = Resume.topdf
 var theme_dd = document.getElementById('select-theme')
 theme_dd.onchange = function() {
   var sel_theme = this.value.toLowerCase()
-  render('resume.json', sel_theme)
+  render('resume-ui-developer.json', sel_theme)
 }

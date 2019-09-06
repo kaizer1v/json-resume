@@ -1,0 +1,69 @@
+{
+  "photo": "me.png",
+  "name": "Vivek Shrinivasan",
+  "title": "",
+  "dob": "30-07-1988",
+  "email": "vivek.shrini@gmail.com",
+  "mobile": "779-847-5687",
+  "linkedin": "https://www.linkedin.com/in/vivek-shrinivasan/",
+  "github": "github.com/kaizer1v",
+  "twitter": "twitter.com/kaizer1v",
+  "website": "kaizer1v.github.io",
+  "blog": "kaizer1v.github.io",
+  "intro": "Vivek Shrinivasan is a self taught Design driven Engineer with 6+ years of experience, who spends most of the time in building better experiences for users on the web. His unique skill set, working with designers has been front-end development using javascript. Until recently, when working with Gramener, he worked on story telling using data and data visualisations. Earlier, he worked with Informatica and Symantec along with the UX team in helping build prototypes and evaluating enterprise products. He also works on python as a tool for data analysis and personal projects.",
+  "experience": [
+    {
+      "org_name": "Gramener",
+      "position": "Tech Lead, Data Visualisation",
+      "start_date": "Jul 2016",
+      "end_date": "Sep 2018",
+      "desc": ["Developed dashboards and visual stories using data. Responsible for <b>leading and developing dashboards</b> with a team of developers.", "As a lead, I was responsible for client <b>requirement gathering</b> and designing, prototyping and leading the development.", "Worked on <b>d3.js for data visualisation and other libraries like jQuery, lodash, mocha (testing), grunt (task-mannagement)</b> etc.", "Worked on <b>pandas</b> - a python library for data analysis and gramex - an internal web server & python platform for dasboards."]
+    },
+    {
+      "org_name": "Informatica",
+      "position": "UI Engineer",
+      "start_date": "Jan 2014",
+      "end_date": "Jul 2016",
+      "desc": ["Built an internal javascript framework, using <b>bootstrap, jquery and d3js</b> for rapid prototyping as part of the <b>UX team</b> and established a process for prototyping and evaluation of the framework on multiple products like Data Profiling, Data Validation and Business Glossary.", "Executing all visual design stages from concept to engineering team.", "Conducted user research and evaluation of user feedback on multiple products and <b>successfully integrated the visual design into production</b>."]
+    },
+    {
+      "org_name": "Symantec",
+      "position": "UI Engineer",
+      "start_date": "Jan 2013",
+      "end_date": "Jul 2014",
+      "desc": ["As <b>part of the UX team</b>, worked closely with UI Engineers across multiple product lines, to integrate and upgrade UI changes, fulfilling the purpose of having a unique visual language across Symantec products.", "Built <b>high-fedility prototypes</b>, for user validation processes to apply changes into products.", "Worked with multiple front-end technologies across verticals including <b>jQuery-UI and Sencha for mobile UI</b> component patterns."]
+    },
+    {
+      "org_name": "Amiworks",
+      "position": "Web Developer",
+      "start_date": "Jan 2011",
+      "end_date": "Jan 2012",
+      "desc": ["Worked on buildling web applications using PHP and <b>Wordpress</b> as a content management system.", "Designed the UI, built the front-end and deployed wazaap, an event discovery platform based of SF, California, along with one team member", "<b>Designed and developed a social networking platform, using buddypress, a plugin for wordpress for ManUtd fans.</b>", "Primarly worked with <b>PHP, Wordpress, jQuery and SQL</b>."]
+    }
+  ],
+  "education": [
+    {
+      "university": "University of St. Andrews",
+      "location": "Scotland, UK",
+      "start_date": "Oct 2008",
+      "end_date": "Nov 2009",
+      "degree": "MSc",
+      "course": "Management & Information Technology"
+    },
+    {
+      "university": "Maharaja Sayajirao University",
+      "location": "Baroda",
+      "start_date": "Jul 2005",
+      "end_date": "Apr 2008",
+      "degree": "BCA",
+      "course": "Computer Applications"
+    }
+  ],
+  "certifications": [
+    {
+      "title": "edX | MIT - Computer Science and Programming using Python",
+      "link": "https://s3.amazonaws.com/verify.edx.org/downloads/2b0083223a2d4c9eb8cc0adf3a958849/Certificate.pdf"
+    }
+  ], 
+  "skills": ["javascript", "es6", "html", "css", "node", "ux prototyping", "ux design", "sql", "shell-scripting"]
+}
