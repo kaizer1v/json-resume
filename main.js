@@ -9,7 +9,7 @@ function render(json, theme_name) {
   Resume.json('resume/' + json).then((resume) => {
     Resume
       .template('themes/'+ theme_name +'/'+ theme_name +'.html', { resume: resume }, '.output')
-      .theme('themes/node_modules/bootstrap/dist/css/bootstrap.min.css')
+      // .theme('themes/node_modules/bootstrap/dist/css/bootstrap.min.css')
       // .theme('themes/node_modules/font-awesome/css/font-awesome.min.css')
       .theme('https://use.fontawesome.com/releases/v5.5.0/css/all.css')
       .theme('themes/'+ theme_name +'/'+ theme_name +'.css', false)
@@ -21,10 +21,10 @@ function render(json, theme_name) {
 
 if(document.location.hash !== "") {
   var theme = document.location.hash.split('#')[1]
-  render('resume.json', theme)
+  render('resume-sample.json', theme)
   document.getElementById('select-theme').value = theme
 } else {
-  render('resume.json', 'first')
+  render('resume-sample.json', 'first')
 }
 
 // save resume as pdf button

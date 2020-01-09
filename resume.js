@@ -33,7 +33,6 @@
       let seltype = (types.indexOf(rtype) === -1) ? 'json' : rtype
       return fetch(file)
         .then(function(resp) {
-          debugger;
           return resp[seltype]();
         })
         .catch(function(err) { throw `${err.message}` })
